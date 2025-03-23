@@ -29,10 +29,15 @@ This repository contains Ansible tasks needed to setup the following modules on 
 
 ### Installing
 
-You need to install Ansible. For that use:
+You need to install Ansible. On Linux use:
 
 ```sh
 pip install -r requirements.txt
+```
+
+NOTE: for MacOS, install this way:
+```sh
+brew install ansible
 ```
 
 Copy and fill out the following files:
