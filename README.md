@@ -1,24 +1,24 @@
-<p align="center">
-  <img width="300" src="./assets/ansible-pi-logo.png">
-</p>
+# Debian setup with Ansible
 
-# Raspberry PI setup with Ansible
-
-Setup your RPI from scratch with only one command!
+Setup Ubuntu or Rpi from scratch with only one command!
 
 ## Description
 
 This repository contains Ansible tasks needed to setup the following modules on RPI:
 
 * periodical autoupgrade
-* bigger SWAP
-* GIT config
-* secure SSH and generate key
-* ZeroTier
+* aptitude
+* crontab
+* setup local .ssh directory
+* Git config
 * pyenv
-* cups and airsane for printers
+* miscellaneous linux tools
+* change Ubuntu firewall (ufw) to firewalld and enable http traffic
+* install and start Apache2
 * docker (also moves docker files to a USB to save storage on the internal SD card)
-* personal projects
+
+## Origination
+This project was forked from https://github.com/Calychas/ansible-pi and contains changes for my personal lab environment. Some of the original tasks remain but are commented out from mail.yml. Original example files remain.
 
 ## Getting Started
 
