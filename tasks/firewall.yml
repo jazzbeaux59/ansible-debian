@@ -1,0 +1,31 @@
+
+- name: firewall | disable and stop ufw
+  service:
+    name: ufw
+    enabled: false
+    state: stopped
+
+- name: firewall | install required packages for firewalld
+  package:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - firewalld
+
+- name: firewall | enable and start firewalld
+  service:
+    name: firewalld
+    enabled: true
+    state: started
+
+- name: firewalld | allow incoming HTTP connections
+  firewalld:
+    service: http
+    permanent: true
+    immediate: yes
+    state: enabled
+
+- name: Always reload firewalld
+  ansible.builtin.service:
+    name: firewalld
+    state: reloaded
