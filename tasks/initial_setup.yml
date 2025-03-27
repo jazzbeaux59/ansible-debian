@@ -7,12 +7,11 @@
   apt: 
     upgrade: dist
 
-- name: Install packages
-  become: true
+- name: Install aptitude
   apt:
-    pkg:
-      - git
-      - sqlite3
+    name: aptitude
+    state: latest
+    update_cache: true
 
 - name: Crontab - setup update and upgrade
   become: true
@@ -21,3 +20,17 @@
     minute: "0"
     hour: "5"
     job: "apt update -q -y && apt dist-upgrade -q -y"
+
+- name: Create .ssh directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.ssh/"
+    state: directory
+    mode: '0700'
+
+- name: copy ssh key files from local computer
+  copy:
+    src: ~/.ssh/
+    dest: "/home/{{ ansible_user }}/.ssh/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'

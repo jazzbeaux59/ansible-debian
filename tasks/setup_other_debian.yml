@@ -1,0 +1,19 @@
+- name: install other linux tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - vim 
+    - curl
+    - wget
+    - git
+    - net-tools
+    - openssh-server
+    - openssh-client
+    - sshpass
+    - nano
+    - htop
+    - tree
+    - jq
+    - unzip
+    - zip
