@@ -1,5 +1,5 @@
 - name: Debug
-  hosts: vms
+  hosts: debian
   tasks:
     - name: Ping my hosts
       ansible.builtin.ping:
