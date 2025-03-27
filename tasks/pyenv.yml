@@ -9,7 +9,7 @@
     path: "{{ ansible_env.HOME }}/.pyenv"
     state: absent
 
-- name: Install build environment
+- name: Install pyenv build environment
   become: true
   apt:
     update_cache: true
@@ -36,7 +36,7 @@
     dest: /tmp/install_pyenv.sh
     mode: 0755
 
-- name: Run install script
+- name: Run pyenv install script
   shell: /tmp/install_pyenv.sh
 
 - name: Add pyenv to .bashrc

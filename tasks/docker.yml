@@ -8,7 +8,7 @@
       default_container_command: sleep 1d
 
     block:
-      - name: Install required system packages
+      - name: Install required system packages for Docker
         apt:
           pkg:
             - apt-transport-https
