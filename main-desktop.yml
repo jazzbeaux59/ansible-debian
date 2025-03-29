@@ -11,4 +11,8 @@
     - name: Common tasks
       ansible.builtin.include_tasks:
         file: tasks/common.yml
-        
+    
+    - name: Install Ansible on remote hosts
+      ansible.builtin.apt:  # Or apt, depending on the OS
+        name: ansible
+        state: present
