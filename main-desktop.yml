@@ -1,0 +1,14 @@
+---
+- name: Main
+  hosts: desktops
+  become: true
+
+  vars:
+    git_user_email: "jazzbeaux59@gmail.com"
+    git_user_name: "Mike Klein"
+
+  tasks:
+    - name: Common tasks
+      ansible.builtin.include_tasks:
+        file: tasks/common.yml
+        

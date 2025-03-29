@@ -1,7 +1,8 @@
 [all_hosts]
-ubuntu-01 ansible_host=192.168.5.30
+ubuntu-01 ansible_host=192.168.5.240
 rpi-01 ansible_host=192.168.4.88
 rpi-02 ansible_host=192.168.4.52
+evans ansible_host=192.168.5.12
 
 [ubuntu]
 ubuntu-01
@@ -10,9 +11,12 @@ ubuntu-01
 rpi-01
 rpi-02
 
-[debian:children]
+[servers:children]
 ubuntu
 rpi
+
+[desktops]
+evans
 
 [all:vars]
 ansible_user=mike

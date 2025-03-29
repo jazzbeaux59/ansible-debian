@@ -1,4 +1,25 @@
 
+- name: assure ssh server is installed
+  become: true
+  apt:
+    name: openssh-server
+    state: present
+    update_cache: true
+
+- name: assure ssh client is installed
+  become: true
+  apt:
+    name: openssh-client
+    state: present
+    update_cache: true
+
+- name: assure sshpass is installed
+  become: true
+  apt:
+    name: sshpass
+    state: present
+    update_cache: true
+
 - name: Update sshd_config
   become: true
   blockinfile:
@@ -11,9 +32,9 @@
       PermitRootLogin no
       MaxAuthTries 3
 
-- name: Restart sshd service
+- name: Restart ssh service
   become: true
   service:
-    name: sshd
+    name: ssh
     state: restarted
     enabled: true
