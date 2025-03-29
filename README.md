@@ -50,13 +50,19 @@ Copy and fill out the following files:
 First debug the connection:
 
 ```sh
-ansible-playbook -i inventory.yml debug.yml
+ansible-playbook -i inventory debug.yml
 ```
 
 If everything works, run the full suite:
 
 ```sh
-ansible-playbook -i inventory.yml main.yml -vv
+ansible-playbook -i inventory main.yml
+```
+
+Or for desktop machines:
+
+```sh
+ansible-playbook -i inventory main-desktop.yml
 ```
 
 ## Authors
