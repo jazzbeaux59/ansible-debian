@@ -13,3 +13,4 @@
     - jq
     - unzip
     - zip
+    - libfuse2

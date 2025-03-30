@@ -1,0 +1,7 @@
+# TODO Install kubectl on remote hosts
+# - name: Install kubectl
+#   ansible.builtin.apt:
+#     name: kubectl
+#     state: present
+#   when: ansible_distribution == "Ubuntu"
+#   tags: kubectl

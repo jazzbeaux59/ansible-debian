@@ -1,0 +1,5 @@
+# TODO: install Notepad++ on remote server
+# - name: Install Notepad++
+#   ansible.builtin.apt:
+#     name: notepad-plus-plus
+#     state: present

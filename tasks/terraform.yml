@@ -1,0 +1,7 @@
+# TODO: Install Terraform on remote hosts
+# - name: Install Terraform
+#   ansible.builtin.apt:
+#     name: terraform
+#     state: present
+#   when: ansible_distribution == "Ubuntu"
+#   tags: terraform

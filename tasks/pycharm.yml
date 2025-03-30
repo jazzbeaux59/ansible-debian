@@ -1,0 +1,5 @@
+# TODO: install PyCharm on remote server
+# - name: Install PyCharm
+#   ansible.builtin.apt:
+#     name: pycharm
+#     state: present
