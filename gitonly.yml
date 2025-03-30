@@ -1,0 +1,29 @@
+---
+- name: install and configure Git
+  hosts: localhost
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Install Git
+      ansible.builtin.apt:
+        name: git
+        state: present
+
+    - name: Setup Git editor
+      git_config:
+        name: core.editor
+        scope: global
+        value: "vim"
+
+    - name: Setup Git user email
+      git_config:
+        name: user.email
+        scope: global
+        value: "jazzbeaux59@gmail.com"
+
+    - name: Setup Git user name
+      git_config:
+        name: user.name
+        scope: global
+        value: "Mike Klein"

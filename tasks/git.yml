@@ -7,7 +7,7 @@
   git_config:
     name: core.editor
     scope: global
-    value: nano
+    value: "vim"
 
 - name: Setup Git user email
   git_config:
