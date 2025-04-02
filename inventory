@@ -3,7 +3,7 @@ ubuntu-01 ansible_host=192.168.5.240
 rpi-01 ansible_host=192.168.4.88
 rpi-02 ansible_host=192.168.4.52
 rpi-nas-01 ansible_host=192.168.4.90
-evans ansible_host=192.168.5.12
+evans ansible_host=192.168.4.128
 
 [ubuntu]
 ubuntu-01
