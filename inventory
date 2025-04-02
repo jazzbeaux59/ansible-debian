@@ -2,6 +2,7 @@
 ubuntu-01 ansible_host=192.168.5.240
 rpi-01 ansible_host=192.168.4.88
 rpi-02 ansible_host=192.168.4.52
+rpi-03 ansible_host=192.168.5.237
 rpi-nas-01 ansible_host=192.168.4.90
 evans ansible_host=192.168.4.128
 
@@ -11,6 +12,7 @@ ubuntu-01
 [rpi]
 rpi-01
 rpi-02
+rpi-03
 rpi-nas-01
 
 [servers:children]
