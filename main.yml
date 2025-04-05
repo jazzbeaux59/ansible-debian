@@ -11,10 +11,3 @@
     - name: Common tasks
       ansible.builtin.include_tasks:
         file: tasks/common.yml
- 
- # TODO: install samba on rpi-nas-xx
-    - name: Install samba
-      ansible.builtin.include_tasks:
-        file: tasks/samba.yml
-      when: inventory_hostname == "rpi-nas-01"
-        

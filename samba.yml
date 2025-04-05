@@ -1,0 +1,39 @@
+---
+# This playbook installs and configures Samba on a Raspberry Pi NAS.
+# It assumes that the Samba package is available in the default repositories.
+# The playbook includes tasks to install Samba, configure the smb.conf file,
+# and restart the Samba service.
+
+# After running this playbook, the Samba service should be up and running.
+# but a Samba account and password must be created for each user.
+## Adding a user: smbpasswd -a <username>. 
+## Changing a password: smbpasswd <username>. 
+## Deleting a user: smbpasswd -d <username> (requires root privileges).
+# TODO: automate the user password creation process from Ansible.
+
+- name: Install and configure Samba
+  hosts: rpi-nas-01
+  become: true
+  tasks:
+    - name: Install Samba
+      package:
+        name: samba
+        state: present
+
+    - name: Configure smb.conf
+      template:
+        src: smb.conf.j2
+        dest: /etc/samba/smb.conf
+      notify: restart samba
+    
+    - name: Install smbclient
+      package:
+        name: smbclient
+        state: present
+
+
+  handlers:
+    - name: restart samba
+      service:
+        name: smbd
+        state: restarted
