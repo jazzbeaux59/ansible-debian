@@ -1,32 +1,34 @@
-  - name: Initial setup
-    ansible.builtin.include_tasks:
-      file: tasks/initial_setup.yml
-  
-  - name: Git
-    ansible.builtin.include_tasks:
-      file: tasks/git.yml
+- name: Initial setup
+  ansible.builtin.include_tasks:
+    file: tasks/initial_setup.yml
 
-  - name: SSH
-    ansible.builtin.include_tasks:
-      file: tasks/ssh.yml
+- name: Git
+  ansible.builtin.include_tasks:
+    file: tasks/git.yml
+  tags:
+    - git
 
-  - name: pyenv
-    ansible.builtin.include_tasks:
-      file: tasks/pyenv.yml
+- name: SSH
+  ansible.builtin.include_tasks:
+    file: tasks/ssh.yml
 
-  - name: setup other tools
-    ansible.builtin.include_tasks:
-      file: tasks/setup_other_debian.yml
+- name: pyenv
+  ansible.builtin.include_tasks:
+    file: tasks/pyenv.yml
 
-  - name: change firewall on Ubuntu
-    ansible.builtin.include_tasks:
-      file: tasks/firewall.yml
-    when: ansible_distribution == "Ubuntu"
-  
-  - name: install apache
-    ansible.builtin.include_tasks:
-      file: tasks/apache.yml
-  
-  - name: Docker
-    ansible.builtin.include_tasks:
-      file: tasks/docker.yml    
+- name: setup other tools
+  ansible.builtin.include_tasks:
+    file: tasks/setup_other_debian.yml
+
+- name: change firewall on Ubuntu
+  ansible.builtin.include_tasks:
+    file: tasks/firewall.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: install apache
+  ansible.builtin.include_tasks:
+    file: tasks/apache.yml
+
+- name: Docker
+  ansible.builtin.include_tasks:
+    file: tasks/docker.yml    
