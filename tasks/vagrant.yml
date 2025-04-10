@@ -1,0 +1,7 @@
+- name: Install Vagrant and VirtualBox
+  ansible.builtin.apt:
+    name:
+      - vagrant
+      - virtualbox
+    state: present
+  register: vagrant_installation

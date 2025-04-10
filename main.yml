@@ -1,6 +1,6 @@
 ---
 - name: Main
-  hosts: servers
+  hosts: all_servers
   become: true
 
   vars:
@@ -11,3 +11,8 @@
     - name: Common tasks
       ansible.builtin.include_tasks:
         file: tasks/common.yml
+
+    - name: Install Vagrant and VirtualBox
+      ansible.builtin.include_tasks:
+        file: tasks/vagrant.yml
+      when: "'ubuntu-01' in inventory_hostname"
