@@ -1,8 +1,16 @@
-# Debian setup with Ansible
+# Provision Home Computers
+
+This repository contains Ansible playbooks and support scripts for provisioning my home computers. It was forked from the repository described below.
+
+---
+
+# Original Readme
+
+## Debian setup with Ansible
 
 Setup Ubuntu or Rpi from scratch with only one command!
 
-## Description
+### Description
 
 This repository contains Ansible tasks needed to setup the following modules on RPI:
 
@@ -17,17 +25,17 @@ This repository contains Ansible tasks needed to setup the following modules on 
 * install and start Apache2
 * docker (also moves docker files to a USB to save storage on the internal SD card)
 
-## Origination
+### Origination
 This project was forked from https://github.com/Calychas/ansible-pi and contains changes for my personal lab environment. Some of the original tasks remain but are commented out from mail.yml. Original example files remain.
 
-## Getting Started
+### Getting Started
 
-### Dependencies
+#### Dependencies
 
 * Python (tested on 3.11.6 and Linux) on the host
 * Raspberry Pi with a debian-based OS (tested on Raspberry Pi OS 64-bit bookworm and RPI 3B+). See [Raspberry Pi OS Imager](https://www.raspberrypi.com/software/) if you didn't install it yet.
 
-### Installing
+#### Installing
 
 You need to install Ansible. On Linux use:
 
@@ -45,7 +53,7 @@ Copy and fill out the following files:
 1. `inventory.yml.example` as `inventory.yml` - change user and host
 2. `main.yml.example` as `main.yml` - supply missing vars, optionally comment out or edit the tasks
 
-### Executing
+#### Executing
 
 First debug the connection:
 
@@ -65,10 +73,10 @@ Or for desktop machines:
 ansible-playbook -i inventory main-desktop.yml
 ```
 
-## Authors
+### Authors
 
 * Kacper Leśniara ([kacper.lesniara@gmail.com](mailto:kacper.lesniara@gmail.com))
 
-## License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details
