@@ -1,0 +1,7 @@
+- name: Install Vagrant and VirtualBox
+  ansible.builtin.include_tasks:
+    file: tasks/vagrant.yml
+
+- name: Install KVM and Libvirt
+  ansible.builtin.include_tasks:
+    file: tasks/kvm.yml

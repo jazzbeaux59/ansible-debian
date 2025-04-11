@@ -5,3 +5,10 @@
       - virtualbox
     state: present
   register: vagrant_installation
+
+- name: Vagrant Plugin Installation
+  ansible.builtin.command:
+    cmd: vagrant plugin install {{ item }}
+  loop:
+    - vagrant-libvirt
+    - vagrant-openstack-provider

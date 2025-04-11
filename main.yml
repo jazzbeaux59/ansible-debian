@@ -16,7 +16,7 @@
         - common
         - git
 
-    - name: Install Vagrant and VirtualBox
+    - name: Install Server Software
       ansible.builtin.include_tasks:
-        file: tasks/vagrant.yml
+        file: tasks/server_software.yml
       when: "'ubuntu-01' in inventory_hostname"
