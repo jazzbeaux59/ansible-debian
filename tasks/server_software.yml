@@ -5,3 +5,11 @@
 - name: Install KVM and Libvirt
   ansible.builtin.include_tasks:
     file: tasks/kvm.yml
+  tags:
+    - kvm
+  
+- name: Install Ansible
+  ansible.builtin.include_tasks:
+    file: tasks/ansible.yml
+  tags:
+    - ansible

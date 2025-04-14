@@ -20,3 +20,5 @@
       ansible.builtin.include_tasks:
         file: tasks/server_software.yml
       when: "'ubuntu-01' in inventory_hostname"
+      tags:
+        - kvm

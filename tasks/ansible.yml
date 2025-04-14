@@ -1,0 +1,17 @@
+- name: Install Ansible
+  ansible.builtin.apt:
+    name: ansible
+    state: latest
+  become: true
+  tags:
+    - ansible
+
+- name: Install Ansible collections
+  ansible.builtin.command:
+    cmd: ansible-galaxy collection install {{ item }}
+  loop:
+    - community.general
+    - community.libvirt
+  become: true
+  tags:
+    - ansible
